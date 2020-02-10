@@ -1,0 +1,39 @@
+
+
+
+15 not found
+
+
+100 does not exist
+350 does not exist
+100 does not exist
+100 inserted
+50 inserted
+25 inserted
+75 inserted
+60 inserted
+65 inserted
+80 inserted
+77 inserted
+90 inserted
+200 inserted
+150 inserted
+250 inserted
+300 inserted
+275 inserted
+350 inserted
+25 50 60 65 75 77 80 90 100 150 200 250 275 300 350 
+100 50 25 75 60 65 80 77 90 200 150 250 300 275 350 
+25 65 60 77 90 80 75 50 150 275 350 300 250 200 100 
+77 found
+15 not found
+25
+350
+77
+15 does not exist
+successor of 350 does not exist
+300
+15 does not exist
+predecessor of 25 does not exist
+50 deleted
+15 does not exist

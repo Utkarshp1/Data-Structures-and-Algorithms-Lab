@@ -1,0 +1,39 @@
+inorder
+preorder
+postorder
+search 15
+minimum
+maximum
+successor 100
+predecessor 350
+delete 100
+insert 100
+insert 50
+insert 25
+insert 75
+insert 60
+insert 65
+insert 80
+insert 77
+insert 90
+insert 200
+insert 150
+insert 250
+insert 300
+insert 275
+insert 350
+inorder
+preorder
+postorder
+search 77
+search 15
+minimum
+maximum
+successor 75
+successor 15
+successor 350
+predecessor 350
+predecessor 15
+predecessor 25
+delete 50
+delete 15

@@ -1,0 +1,10 @@
+insert 16
+insert 14
+maximum
+extract-max
+increase-key 2 1
+extract-max
+increase-key 1 19
+increase-key 1 10
+increase-key 1 1
+sort

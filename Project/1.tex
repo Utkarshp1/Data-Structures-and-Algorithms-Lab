@@ -1,0 +1,107 @@
+\newcommand{\myteam}{Blaze} % Name of your team goes here.
+\title{LUMBERJACK\footnote{This is a report on the course 
+    project for the course CS211 Data Structures and Algorithms Lab}} % You may change the title if you want.
+\author{\textbf{\myteam}\footnote{Email IDs of team members : [180010001]\texttt{@iitdh.ac.in}, [180010027]\texttt{@iitdh.ac.in}, [180030042]\texttt{@iitdh.ac.in}}\\
+    {\small Abhinav Pratap Singh (180010001),} % Here arrange the the member's name and roll nos.  
+    {\small Rishit Saiya (180010027),} % in the increasing order of roll nos.
+    {\small Utkarsh Prakash (180030042)} \\
+    {\small Computer Science and Engineering, IIT Dharwad}\\% Do not change this.
+}
+\date{\today}
+
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\begin{document}
+\maketitle
+
+\begin{abstract} % You may change the abstract if you want.
+This paper describes the algorithm and heuristics followed by the program written by \myteam for the \textit{Lumberjack} problem listed in the online platform Optil.io.
+\end{abstract}
+
+\section{Environment Variables}
+%You can have a section like this. The content of the section goes here.
+    \begin{itemize}
+        \item For storage of different parameters of trees, a structure has been used.
+        \item Profit = Price + Profit earned by Domino Effect i.e. Price of other tree that fall due to domino effect.
+        \item direc variable stores the direction in which the tree should be cut so as to get the maximum profit.
+        \item Vector v stores information of all the trees.
+        \item c\textunderscore x and c\textunderscore y store the information about the current x,y coordinates i.e. the coordinates of the most recently cut tree.
+        \item n\textunderscore x and n\textunderscore y store the coordinates of next tree to be cut.
+        \item t is the time that has been given to us cut the tree (not the execution time of the program).
+		\item We have given \textbf{color} to every tree in order to know whether the tree has been cut or not.
+    \end{itemize}
+    
+\section{Main Algorithm Idea}
+The main idea remains to maximize the profit to maximum extent.\\
+    
+
+The main factors affecting the profit are : 
+    \begin{itemize}
+        \item The extraction of maximum profit from the Domino Effect.
+        \item The time given to us is limited, hence we can't cut all the tree. Moreover, since 
+		the exceution time of the program is also limited hence we can't check all the possible path and find the route 
+		that yields maximum profit.
+    \end{itemize}
+	So, we decided that we would choose the tree having the maximum value of:
+	\begin{equation}
+		\frac{profit}{time}
+	\end{equation}
+
+\subsection{Extraction of maximum profit from Domino Effect}
+%Subsections are also possible.
+The functions used for the above mentioned factors are calculate\textunderscore profit(), cutup\textunderscore profit(), cutdown\textunderscore profit(), cutright\textunderscore profit(), cutdown\textunderscore profit().
+    \begin{itemize}
+        \item \textbf{cutup\textunderscore profit() function}
+        
+            This function first finds the nearest neighbour of the given tree (in the “up” direction) and then checks whether that tree can have a domino effect or not.\\
+            
+            Then it makes a recursive call to find that whether the next nearest neighbour of the given tree (in the up direction) can participate in the domino effect. \\
+            
+            The function returns the extra-profit that can be made when the tree is cut in the up-direction due to the domino effect.\\
+			
+			The function also calculates which trees will be cut due to domino effect.
+        
+        \item \textbf{calculate\textunderscore profit() function}  \\
+        
+            This function calculates the direction in which the profit is maximum and updates the profit of each tree in that direction. \\
+            
+    \end{itemize}
+	
+	\textbf{NOTE :} Similarly functions cutright\textunderscore profit(), cutdown\textunderscore profit() and cutleft\textunderscore profit calculate the profit of cutting the trees in right, down and left respectively.\\
+\newpage
+\subsection{Choosing the tree next tree to be cut}
+
+The function used for the above mentioned factor is path().
+    \begin{itemize}
+        \item \textbf{path() function}
+            
+            This function first computes the cost of cutting a tree i.e. the cost of reaching to that tree plus the diameter of the tree. \\
+            
+            If this cost is less than the time left with us, then it calculates the profit/time for that tree. Then it finds the maximum of this quantity among all the trees and the next tree to be cut will be the tree which has the maximum of this quantity.\\
+    \end{itemize}
+
+\subsection{Printing expected output}
+    The function used for the above mentioned factor is print\textunderscore path().
+    
+        \begin{itemize}
+            \item \textbf{print\textunderscore path() function}
+            
+                This function simply prints the path that is to be followed to reach a tree.\\
+                
+        \end{itemize}
+
+\subsection {Updating our database} 
+		\begin{itemize}
+			\item When we want cut a tree we color it black. We update the c\textunderscore x and c\textunderscore y as n\textunderscore x and n\textunderscore y respectively. \\
+		\end{itemize}
+
+%\newpage
+\section{Final Notes}
+    \begin{itemize}
+        \item The other variables used in the program like h, p, c, etc. have the same meaning as mentioned in the problem statement.
+        \item With this algorithm and heuristics, we were finally able to make a total profit of \textbf{14,44,21,499 units}.
+    \end{itemize}
+        
+
+\end{document}
